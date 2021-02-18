@@ -1,6 +1,6 @@
 from  ubuntu:14.04
 
-copy sources.list.trusty  /etc/apt/sources.list
+#copy sources.list.trusty  /etc/apt/sources.list
 ENV DEBIAN_FRONTEND noninteractive
 run   apt-get update && \
       apt-get install -y --no-install-recommends  wget  unzip subversion  openjdk-7-jre  openjdk-7-jdk  && \
