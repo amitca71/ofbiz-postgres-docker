@@ -1,0 +1,11 @@
+ofbiz:
+  build: .
+  ports:
+   - "8443:8443"
+   - "8080:8080"
+  net: 
+      "ofbiz"
+  external_links:
+      - dockerpostdb_ofbiz-db
+#  command:
+#     "./ant start"
