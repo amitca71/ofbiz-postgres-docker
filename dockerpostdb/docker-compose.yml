@@ -1,10 +1,18 @@
-ofbiz-db:
-  build: .
-  volumes:
-    - postgres_conf:/etc/postgresql
-    - postgres_log:/var/log/postgresql
-    - postgres_storage:/var/lib/postgresql
-  ports:
-    - "5432:5432"
-  net:
-      "ofbiz"
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    depends_on:
+      - db
+#    command: sleep 5000
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - LANG=en_US.utf8
+   
