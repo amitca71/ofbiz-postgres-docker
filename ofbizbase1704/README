@@ -1,0 +1,4 @@
+stand alone ofbiz1704, using derby database
+docker-compose up
+https://localhost:8443/partymgr/control/main
+(admin/ofbiz)
