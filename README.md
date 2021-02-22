@@ -4,16 +4,16 @@ In order to operate it, need to follow the following steps:
 1. create ofbiz network:
   sudo docker network create ofbiz
 
-2. build and boot db image :
-   cd <docker_home>/dockerpostdb
+2. build ofbizbase1704 :
+   cd <docker_home>/ofbizbase1704
    sudo docker-compose build 
-   sudo docker-compose up -d
+   (sudo docker-compose up -d - will boot the server with derby embeded db)
 
-3. build and boot ofbiz image:
-   cd <docker_home>/ofbizbase
+3. in order to use postgres 
+   cd <docker_home>/dockerpostdb
    sudo docker-compose build
    sudo docker-compose up -d
-(be aware that ofbizbase doesnt create admin user database, 
-after 1st execusion need to overide the command in composer yml file- usualy will be done on separate layer )
+
+ofbizbase - is deprecated, builds old version of ofbiz with derby
 
 
