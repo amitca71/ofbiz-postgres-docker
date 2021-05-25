@@ -9,7 +9,8 @@ run git clone https://gitbox.apache.org/repos/asf/ofbiz-framework.git ofbiz-fram
 #COPY entitymodel.xml ofbiz.14.12/specialpurpose/bi/entitydef
 workdir ofbiz-framework
 run ./gradlew pullAllPluginsSource
+COPY ofbiz-component.xml.catalina /ofbiz-framework/framework/catalina/ofbiz-component.xml
+run apt install net-tools
 run ./gradlew cleanAll loadAll
 run ./gradlew "ofbiz --load-data readers=seed,seed-initial,ext,ext-demo"
-cmd ./gradlew ofbiz
-
+cmd ./gradlew "ofbiz  --portoffset $PORT"

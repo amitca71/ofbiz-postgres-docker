@@ -7,5 +7,7 @@ ofbiz:
       "ofbiz"
   external_links:
       - dockerpostdb_ofbiz-db
+  environment:
+      - PORT=8443
 #  command:
 #     "./ant start"
